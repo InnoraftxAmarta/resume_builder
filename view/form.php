@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width", initial-scale="1.0">
     <title>Document</title>
 </head>
@@ -32,16 +33,18 @@
     </div>
   </div>
 </nav>
+<div class="fillcon">
+<div class="container">
     <form action="../controller/upload.php" method="post" enctype="multipart/form-data">
         <div class="row">
             <div class="col-md-2">
                 <label>Name</label>
-                <input type="text" class="col-md-2 form-control d-inline " name="Name" placeholder="Name">
+                <input type="text" class="col-md-2 form-control d-inline " pattern="[A-Za-z]{1,}[' ']{*}[A-Za-z]{*}" name="Name" placeholder="Name">
             </div>
             
             <div class="col-md-2">
                 <label>Date of birth</label>
-                <input type="date" class="col-md-2 form-control d-inline " name="DOB" placeholder="DD-MM-YYYY">
+                <input type="date" class="col-md-2 form-control d-inline "  name="DOB" placeholder="DD-MM-YYYY">
             </div>
             <div class="col-md-2">
                 <label>Photo</label>
@@ -49,7 +52,7 @@
             </div>
             <div class="col-md-2">
                 <label>Email</label>
-            <input type="email" class="col-md-2 form-control d-inline  " name="Email" placeholder="Email Id">
+            <input type="email" class="col-md-2 form-control d-inline  " pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" name="Email" placeholder="Email Id">
             </div>
             <div class="col-md-2">
                 <label>Linkedin Profile</label>
@@ -64,19 +67,19 @@
                 <div class="col-md-2">
                     <div class="form-group mb-3">
                         <label>School Name</label>
-                        <input type="text" name="schoolname[]" class="form-control"  placeholder="School name">
+                        <input type="text" name="schoolname[]" class="form-control" pattern="[A-Za-z]{1,}"  placeholder="School name">
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="form-group mb-2">
                         <label>Stream</label>
-                        <input type="text" name="Stream[]" class="form-control"  placeholder="Stream">
+                        <input type="text" name="Stream[]" class="form-control" pattern="[A-Za-z]{1,}"  placeholder="Stream">
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="form-group mb-2">
                         <label>Passing Year</label>
-                        <input type="text" name="yop[]" class="form-control"  placeholder="Passing Year">
+                        <input type="text" name="yop[]" class="form-control" pattern="[1-9]{1}[0-9]{3}" placeholder="Passing Year">
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -96,19 +99,19 @@
                 <div class="col-md-2">
                     <div class="form-group mb-3">
                         <label>College Name</label>
-                        <input type="text" name="collegename[]" class="form-control" placeholder="School name">
+                        <input type="text" name="collegename[]" class="form-control" pattern="[A-Za-z]{1,}" placeholder="School name">
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="form-group mb-2">
                         <label>Stream</label>
-                        <input type="text" name="col-Stream[]" class="form-control" placeholder="Stream">
+                        <input type="text" name="col-Stream[]" class="form-control" pattern="[A-Za-z]{1,}" placeholder="Stream">
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="form-group mb-2">
                         <label>Passing Year</label>
-                        <input type="text" name="col-yop[]" class="form-control" placeholder="Passing Year">
+                        <input type="text" name="col-yop[]" class="form-control" pattern="[1-9]{1}[0-9]{3}" placeholder="Passing Year">
                     </div>
                 </div>
                 <div class="col-md-2">
@@ -128,29 +131,32 @@
                 <div class="col-md-2">
                     <div class="form-group mb-3">
                         <label>Project Name</label>
-                        <input type="text" name="proname[]" class="form-control" placeholder="Project Name">
+                        <input type="text" name="proname[]" class="form-control" pattern="[A-Za-z]{1,}" placeholder="Project Name">
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="form-group mb-2">
                         <label>Description</label>
-                        <input type="text" name="pro-des[]" class="form-control" placeholder="Description">
+                        <input type="text" name="pro-des[]" class="form-control" pattern="[A-Za-z]{1,}" placeholder="Description">
                     </div>
                 </div>
                 <div class="col-md-2">
                     <div class="form-group mb-2">
                         <label>Completion Year</label>
-                        <input type="text" name="yoc[]" class="form-control" placeholder="Completion Year">
+                        <input type="text" name="yoc[]" class="form-control" pattern="[1-9]{1}[0-9]{3}" placeholder="Completion Year">
                     </div>
                 </div>
-              
-                
             </div>
         </div>
         <div class="paste-new-forms-project"></div>
 
         <button type="submit" name ="submit" class="btn btn-primary">Submit</button>
     </form>
+    <form action="../controller/log-out.php">
+        <br>
+  <button type="submit" class="btn btn-danger">Log out</button>
+  </div>
+</div>
     <script src="https://code.jquery.com/jquery-3.6.1.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
@@ -165,19 +171,19 @@
                 <div class="col-md-2">\
                     <div class="form-group mb-3">\
                         <label>School Name</label>\
-                        <input type="text" name="schoolname[]" class="form-control" required placeholder="School name">\
+                        <input type="text" name="schoolname[]" class="form-control" pattern="[A-Za-z]{1,}" required placeholder="School name">\
                     </div>\
                 </div>\
                 <div class="col-md-2">\
                     <div class="form-group mb-2">\
                         <label>Stream</label>\
-                        <input type="text" name="Stream[]" class="form-control" required placeholder="Stream">\
+                        <input type="text" name="Stream[]" class="form-control" pattern="[A-Za-z]{1,}" required placeholder="Stream">\
                     </div>\
                 </div>\
                 <div class="col-md-2">\
                     <div class="form-group mb-2">\
                         <label>Passing Year</label>\
-                        <input type="text" name="yop[]" class="form-control" required placeholder="Passing Year">\
+                        <input type="text" name="yop[]" class="form-control" pattern="[1-9]{1}[0-9]{3}" required placeholder="Passing Year">\
                     </div>\
                 </div>\
                 <div class="col-md-2">\
@@ -204,19 +210,19 @@
                 <div class="col-md-2">\
                     <div class="form-group mb-3">\
                         <label>College Name</label>\
-                        <input type="text" name="collegename[]" class="form-control" required placeholder="College name">\
+                        <input type="text" name="collegename[]" class="form-control" pattern="[A-Za-z]{1,}" required placeholder="College name">\
                     </div>\
                 </div>\
                 <div class="col-md-2">\
                     <div class="form-group mb-2">\
                         <label>Stream</label>\
-                        <input type="text" name="col-Stream[]" class="form-control" required placeholder="Stream">\
+                        <input type="text" name="col-Stream[]" class="form-control" pattern="[A-Za-z]{1,}" required placeholder="Stream">\
                     </div>\
                 </div>\
                 <div class="col-md-2">\
                     <div class="form-group mb-2">\
                         <label>Passing Year</label>\
-                        <input type="text" name="col-yop[]" class="form-control" required placeholder="Passing Year">\
+                        <input type="text" name="col-yop[]" class="form-control" pattern="[1-9]{1}[0-9]{3}" required placeholder="Passing Year">\
                     </div>\
                 </div>\
                 <div class="col-md-2">\
@@ -240,19 +246,19 @@
                 <div class="col-md-2">\
                     <div class="form-group mb-3">\
                         <label>Project Name</label>\
-                        <input type="text" name="proname[]" class="form-control" required placeholder="Project Name">\
+                        <input type="text" name="proname[]" class="form-control" pattern="[A-Za-z]{1,}" required placeholder="Project Name">\
                     </div>\
                 </div>\
                 <div class="col-md-2">\
                     <div class="form-group mb-2">\
                         <label>Description</label>\
-                        <input type="text" name="pro-des[]" class="form-control" required placeholder="Description">\
+                        <input type="text" name="pro-des[]" class="form-control" pattern="[A-Za-z]{1,}" required placeholder="Description">\
                     </div>\
                 </div>\
                 <div class="col-md-2">\
                     <div class="form-group mb-2">\
                         <label>Completion Year</label>\
-                        <input type="text" name="yoc[]" class="form-control" required placeholder="Completion Year">\
+                        <input type="text" name="yoc[]" class="form-control" pattern="[1-9]{1}[0-9]{3}" required placeholder="Completion Year">\
                     </div>\
                 </div>\
                 <div class="col-md-2">\
@@ -263,9 +269,7 @@
             </div>')});
         });
     </script>
-    <form action="../controller/log-out.php">
-        <br>
-  <button type="submit" class="btn btn-primary">Log out</button>
+    
 </form>
 </body>
 </html>

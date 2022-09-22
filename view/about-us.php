@@ -5,9 +5,11 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
     <title>Document</title>
 </head>
 <body>
+ 
 <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
   <div class="container-fluid">
     <a class="navbar-brand">ABOUT US </a>
@@ -32,15 +34,20 @@
     </div>
   </div>
 </nav>
+<div class="fillcon"> 
+<div class="container">
+<h2> About Us</h2>
 
-<h1> <u>About Us</u> </h1>
-
-<h3> WE MAKE LIFE SIMPLE </h3>
+<h2> WE MAKE LIFE SIMPLE </h2>
 
 <p>This resume builder is made by Amarta Sarkar(Software trainee)@innoraft , <br>
 We try to make your life simple by using a form to take input and make a resume <br>
 for you so that you don't have to waste time for making resume .
 </p>
-
+<form action="../controller/log-out.php">
+  <button type="submit" class="btn btn-danger">Log out</button>
+</form>
+</div>
+</div>
 </body>
 </html>

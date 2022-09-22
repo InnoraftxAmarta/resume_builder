@@ -12,7 +12,6 @@
 <?php 
 session_start();
 $flag=0;
-
   if($_SESSION['user']!="" && $_SESSION['pass'] !=""){
 
 require('../../assignment5/fpdf184/fpdf.php');
@@ -132,9 +131,16 @@ $i=0;
                             if (!file_exists('/var/www/html/phpassignment1/resume_builder/controller/save_pdf/'.$_SESSION['user'].$_SESSION['pass'])) {
                                 mkdir('/var/www/html/phpassignment1/resume_builder/controller/save_pdf/'.$_SESSION['user'].$_SESSION['pass'], 0777, true);
                             }
+                            session_start();
+                            $path    = 'save_pdf/'.$_SESSION['user'].$_SESSION['pass'];
+                            $files = scandir($path);
+                            $files = array_diff(scandir($path), array('.', '..'));
+                            foreach($files as $file){
+                                ++$flag;
+                            }
                                 $pdf->Output('F','save_pdf/'.$_SESSION['user'].$_SESSION['pass'].'/resume'.$flag.'.pdf');
                                 $pdf->Output('I','resume'.$flag.'.pdf');
-                                $flag++;
+                                
                             ob_end_flush();
                         }
                 }
