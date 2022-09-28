@@ -1,0 +1,23 @@
+create table RB (
+    user_id int NOT NULL PRIMARY KEY AUTO_INCREMENT,
+    First_name varchar(50),
+    Last_name varchar(50),
+    User_name varchar(50),
+    password varchar(50)
+);
+
+insert into RB (First_name,Last_name,User_name,password) values ($fname,$lname,$uname,$pass);
+
+
+select password from RB where User_name=$uname;
+
+resume.com/
+
+POST https://www.linkedin.com/oauth/v2/accessToken HTTP/1.1
+
+Content-Type: application/x-www-form-urlencoded
+grant_type=authorization_code
+code=AQTkAvsqN7YwllzFK7Kfayghs7f9cjPXFAEVTOdD62SqnX_b93l2l2w7uCy8Rfij1du_0OjgsZpGSUuf7VeNLHAipcqyDEi1aAbFRNFCiCpvqS39CI1-N6_XsnVtEVKM-LPImZnIRdEzC6nsjQNNMVnwjPgRAqKyHOP8JCvJYlEGNciCuF1Vy1PAHeZ0jybGa04IYEUYnYCDsiH6nhE
+redirect_uri=resume.com/view/home.php
+client_id=86i7q1357wnlxd
+client_secret=fklUdiGM2qCpeatA
