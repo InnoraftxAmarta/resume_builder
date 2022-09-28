@@ -49,5 +49,12 @@ for you so that you don't have to waste time for making resume .
 </form>
 </div>
 </div>
+<?php
+function set_url( $url )
+{
+    echo("<script>history.replaceState({},'','$url');</script>");
+}
+set_url("http://resume.com/Aboutus");
+?>
 </body>
 </html>

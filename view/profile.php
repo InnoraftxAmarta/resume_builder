@@ -1,3 +1,9 @@
+<?php
+session_start();
+
+  if($_SESSION['user']!="" && $_SESSION['pass'] !=""){
+
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -45,7 +51,11 @@ foreach($files as $file){
     echo "Content last changed: ".date("F d Y H:i:s.", fileatime($path.'/'.$file));
     echo "<a href=$path/$file>$file</a>";
     echo "<br>";
+}}
+else{
+  header("Location:log-in-page.php");
 }
+
 ?>
 
 <form action="../controller/log-out.php">
@@ -54,5 +64,13 @@ foreach($files as $file){
 
 </div>
 </div>
+
+<?php
+function set_url( $url )
+{
+    echo("<script>history.replaceState({},'','$url');</script>");
+}
+set_url("http://resume.com/profile");
+?>
 </body>
 </html>

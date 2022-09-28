@@ -271,5 +271,13 @@
     </script>
     
 </form>
+
+<?php
+function set_url( $url )
+{
+    echo("<script>history.replaceState({},'','$url');</script>");
+}
+set_url("http://resume.com/Resume");
+?>
 </body>
 </html>

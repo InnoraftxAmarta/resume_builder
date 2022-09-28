@@ -72,5 +72,12 @@ else{
 </div>
 </div>
 </div>
+<?php
+function set_url( $url )
+{
+    echo("<script>history.replaceState({},'','$url');</script>");
+}
+set_url("http://resume.com/Home");
+?>
 </body>
 </html>
